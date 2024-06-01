@@ -1,0 +1,74 @@
+### 1. Global .gitconfig Dosyası Kullanın
+Her iki ortamda da aynı kullanıcı adı ve e-posta adresini kullanarak Git yapılandırmalarınızı senkronize edebilirsiniz. Bu dosya, evde ve işte aynı ayarları kullanmanızı sağlar.
+
+sh
+git config --global user.name "Kullanıcı Adı"
+git config --global user.email "email@example.com"
+
+
+### 2. Ortak Bir Yol Kullanarak Çalışın
+Her iki makinede de aynı klasör yapısını kullanarak çalışmayı deneyin. Örneğin, evde ve işte kodlarınızı aynı yolda tutabilirsiniz.
+
+- Evde: C:/Projects/MyRepo
+- İşte: C:/Projects/MyRepo
+
+### 3. .gitignore Dosyası Kullanarak Ortam Spesifik Dosyaları Hariç Tutun
+Eğer bazı dosyalar sadece belirli bir ortamda (evde veya işte) gerekiyorsa, bu dosyaları .gitignore dosyasına ekleyerek Git tarafından izlenmelerini engelleyebilirsiniz.
+
+plaintext
+# Örneğin:
+.env
+*.log
+node_modules/
+
+
+### 4. SSH veya HTTPS Kullanın
+GitHub ile bağlantılarınızı güvenli hale getirmek ve farklı cihazlardan rahatlıkla erişebilmek için SSH anahtarları veya HTTPS bağlantıları kullanabilirsiniz.
+
+#### SSH Anahtarı Kurulumu:
+1. SSH anahtarını oluşturun:
+    sh
+    ssh-keygen -t ed25519 -C "your_email@example.com"
+
+2. Anahtarınızı GitHub hesabınıza ekleyin.
+3. SSH üzerinden klonlayın:
+    sh
+    git clone git@github.com:username/repo.git
+
+
+#### HTTPS Kullanımı:
+Her iki cihazda da HTTPS kullanarak klonlama yapabilirsiniz:
+sh
+git clone https://github.com/username/repo.git
+
+
+### 5. Git Reposunu Her İki Cihazda da Senkronize Tutun
+Her iki cihazda da aynı repo üzerinde çalışıyorsanız, her değişiklikten sonra git pull ve git push komutlarını kullanarak reponuzu senkronize tutun.
+
+sh
+# Değişiklik yaptıktan sonra:
+git add .
+git commit -m "Commit mesajı"
+git push
+
+# Diğer cihazda değişiklikleri çekmek için:
+git pull
+
+
+### 6. Çakışmaları Yönetme
+Eğer kodlarda çakışma oluyorsa, git merge veya git rebase komutlarını kullanarak çakışmaları çözebilirsiniz. Çakışma durumunda Git size hangi dosyada sorun olduğunu gösterecektir ve siz de gerekli düzenlemeleri yaparak işlemi tamamlayabilirsiniz.
+
+sh
+# Çakışmaları çözmek için:
+git merge origin/main
+# veya
+git rebase origin/main
+
+
+### Özet
+- Aynı klasör yapısını her iki cihazda da kullanın.
+- Ortam spesifik dosyaları .gitignore ile hariç tutun.
+- SSH veya HTTPS bağlantıları kullanarak kolay erişim sağlayın.
+- Düzenli olarak git pull ve git push komutlarını kullanarak reponuzu güncel tutun.
+
+Bu adımları izleyerek, yerel makineler arasındaki farklardan kaynaklanan sorunları en aza indirebilir ve GitHub ile çalışma süreçlerinizi daha verimli hale getirebilirsiniz.
