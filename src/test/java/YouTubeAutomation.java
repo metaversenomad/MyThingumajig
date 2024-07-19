@@ -46,7 +46,18 @@ public class YouTubeAutomation {
         WebElement filters = driver.findElement(By.xpath("//*[@id=\"filter-button\"]/ytd-button-renderer/yt-button-shape/button/yt-touch-feedback-shape/div/div[2]"));
 
         filters.click();
+        Thread.sleep(1000);
 
+        driver.findElement(By.xpath("//*[.='Over 20 minutes']")).click();
+        Thread.sleep(1000);
+
+        filters.click();
+        Thread.sleep(3000);
+
+        driver.findElement(By.xpath("(//*[.='Upload date'])[2]")).click();
+        Thread.sleep(3000);
+
+        driver.findElement(By.xpath("(//ytd-video-renderer)[1]")).click();
 
     }
 
