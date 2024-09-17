@@ -4,6 +4,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -19,7 +20,9 @@ public class YouTubeAutomation {
             // Set the path to your ChromeDriver executable
             WebDriverManager.chromedriver().setup();
             // Initialize the ChromeDriver
-            WebDriver driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-search-engine-choice-screen");
+            WebDriver driver = new ChromeDriver(options);
 
         driver.get("https://www.youtube.com");
         driver.manage().window().maximize();
