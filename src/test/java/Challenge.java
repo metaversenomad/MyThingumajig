@@ -9,6 +9,6 @@ public class Challenge {
 
         WebDriver driver = new ChromeDriver();
 
-        driver.get("https://cybertekschool.com");
+        driver.get("https://cydeo.com");
     }
 }

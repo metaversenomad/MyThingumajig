@@ -29,8 +29,8 @@ public class YouTubeAutomation {
         Thread.sleep(2000);
 
         // Çerezleri kabul et
-        WebElement cookies = driver.findElement(By.xpath("//button[@class='yt-spec-button-shape-next yt-spec-button-shape-next--filled yt-spec-button-shape-next--mono yt-spec-button-shape-next--size-m']"));
-        cookies.click();
+
+        driver.findElement(By.xpath("//*[@id=\"content\"]/div[2]/div[6]/div[1]/ytd-button-renderer[1]/yt-button-shape/button/yt-touch-feedback-shape/div/div[2]")).click();
 
         WebElement inputBox = driver.findElement(By.xpath("//input[@placeholder='Search']"));
 
